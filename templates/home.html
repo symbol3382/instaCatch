@@ -1,0 +1,25 @@
+<html>
+
+<head>
+    <title>Welcome</title>
+</head>
+
+<body>
+    <table border=1>
+        <thead>
+            <th>Name</th>
+            <th>Username</th>
+        </thead>
+        <tbody>
+            {% for x in followers_list %}
+            <tr>
+                <td>{{ x.full_name}}</td>
+                <td>{{ x.username }}</td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>
