@@ -3,8 +3,8 @@ import instaloader
 class Followers:
 
     def __init__(self, username, password):
-        self.username = 'aadeezgauravatif'
-        self.password = 'aAdeEz@1234' 
+        self.username = username
+        self.password = password
         self.obj = instaloader.Instaloader()
         self.obj.login(self.username, self.password)
  
