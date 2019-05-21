@@ -1,0 +1,7 @@
+INSERT INTO `user_follower`(`user_id`, `follower_username`, `full_name`) 
+VALUES 
+(4,'ayomide_lexxy','ayomide'),
+(4,'minute.snippet','sdf'),
+(4,'insta_official_puru19','____P U R U S H O T T A M____👈'),
+(4,'brajrajsinghrawat','Brajraj Singh Rawat'),
+(4,'ovac4u','OVAC ™🌐💻')

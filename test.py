@@ -21,17 +21,17 @@ def getFollowers():
     result_list = []
     i = 0
     for f in followers:
-        username = f.username.replace("'", "\\\'")
-        fullname = f.full_name.replace("'", "\\\'")
-        username = username.replace("#", "\#")
-        fullname = fullname.replace("#", "\#")
+        follower_username = f.username.replace("'", "\\\'")
+        follower_fullname = f.full_name.replace("'", "\\\'")
+        follower_fullname = follower_fullname.replace("#", "\#")
+        follower_username = follower_username.replace("#", "\#")
         if i == 5:
             break
         i += 1
-        result_list.append('(\'' + username + '\',\'' + fullname + '\')')
+        result_list.append('(\'' + username + '\',\'' + follower_fullname + '\')')
     result = ','.join(result_list)
     print(result)
-    return result 
+    return result
 
 
 @app.route('/')
@@ -40,9 +40,12 @@ def index():
     query = 'INSERT INTO user (username, fullname) VALUES ' + getFollowers()
     #render_template('test.html', query = query)
     cur.execute(query)
-    mysql.connection.commit()    
+    mysql.connection.commit()
     cur.close()
-    return render_template('test.html', query = query)
+    return render_template('test.html', query=query)
+
 
 if __name__ == '__main__':
-    app.run(debug = True)
+    app.run(debug=True)
+
+
