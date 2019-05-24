@@ -14,8 +14,9 @@ MAX_ROWS_INSERT = 32500
 
 # to check the user is present or not
 
+username = ''
 
-def check_user_exist(username):
+def check_user_exist():
     cur = mysql.connection.cursor()
     cur.execute('SELECT id from `user` WHERE username=%s', (username,))
     current_user_count = len(cur.fetchall())
@@ -25,8 +26,10 @@ def check_user_exist(username):
 # to insert user for new users
 
 
-def insert_user_if_not_exist(username, followers):
-    if True:
+def insert_user_if_not_exist(followers):
+    condition = check_user_exist()
+    print(condition)
+    if condition == 0:
         # user is not exist so do
         # 1. Add user to instacatch.user table
         # 2. Add user's follower list to instacatch.user_follower table
@@ -48,8 +51,6 @@ def insert_user_if_not_exist(username, followers):
             sql_query = 'INSERT INTO `user_follower`(`user_id`, `follower_username`, `follower_name`) VALUES '
             followers_insert_list = []
 
-            i = 0
-
             for x in followers:
                 follower_fullname = x.full_name.replace("'", "\\\'")
                 follower_fullname = follower_fullname.replace("#", "\#")
@@ -59,14 +60,12 @@ def insert_user_if_not_exist(username, followers):
 
             insert_list = ','.join(followers_insert_list)
             sql_query += insert_list
-            print(sql_query)
             cur.execute(sql_query)
             mysql.connection.commit()
         cur.close()
     else:
         # So user is not new, now compare list of user followers with previous
         print('user is not new')
-    print(sql_query)
     return sql_query
 
 @app.route('/')
@@ -76,13 +75,11 @@ def index():
 @app.route('/check_login', methods=['POST'])
 def check_login():
     if request.method == 'POST':
-        followers = Followers(request.form['username'], request.form['password'])
-        followers_list = followers.get_followers_list()
         username = request.form['username']
-        sql_query = insert_user_if_not_exist(username, followers_list)
-    print(sql_query)
-    return render_template('test.html', result = sql_query)
-    # return render_template('/home.html', followers_list = followers_list)
+        followers = Followers(username, request.form['password'])
+        followers_list = followers.get_followers_list()
+        sql_query = insert_user_if_not_exist(followers_list)
+    return render_template('home.html', result = sql_query)
 
 if __name__ == '__main__':
     app.run(debug = True)

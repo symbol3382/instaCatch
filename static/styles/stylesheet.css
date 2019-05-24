@@ -1,0 +1,22 @@
+body, html{
+    background: black;
+    margin: 0px;
+    padding: 0px;
+}
+
+form {
+    width: 20vw;
+    min-width: 300px;
+    background: #FA9B2434;
+    position: relative;    
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+    margin: auto;
+}
+
+.row input{
+    width: 100%;
+    border: 1px solid white;
+    height: 30px;
+}

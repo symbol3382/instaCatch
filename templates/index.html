@@ -2,14 +2,29 @@
 
 <head>
     <title>Welcome</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/stylesheet.css') }}" type="text/css">
 </head>
 
 <body>
-    <form action="check_login" method="POST">
-        <input type="text" placeholder="Username" name="username">
-        <input type="password" placeholder="Password" name="password">
-        <input type="submit" value="Login with Instagram">
-    </form>
+    <header>
+
+    </header>
+    <div class="content-div">
+        <form action="check_login" method="POST">
+            <div class="row">
+                <input type="text" placeholder="Username" name="username">
+            </div>
+            <div class="row">
+                <input type="password" placeholder="Password" name="password">
+            </div>
+            <div class="row">
+                <input type="submit" value="Login with Instagram">
+            </div>
+        </form>
+    </div>
+    <footer>
+        <p> Copyrights</p>
+    </footer>
 </body>
 
 </html>
