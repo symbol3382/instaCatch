@@ -1,24 +1,20 @@
 <html>
 
 <head>
-    <title>Welcome</title>
+	<title>Welcome</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='styles/home_stylesheet.css') }}" type="text/css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='styles/stylesheet.css') }}" type="text/css">
 </head>
 
 <body>
-    <table border=1>
-        <thead>
-            <th>Name</th>
-            <th>Username</th>
-        </thead>
-        <tbody>
-            {% for x in followers_list %}
-            <tr>
-                <td>{{ x.full_name}}</td>
-                <td>{{ x.username }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+	<header>
+		<div class="home-logo-div"></div>
+		<ul>
+			<li><a href="/followers">Followers</a></li>
+			<li><a href="/new_followers">New Followers</a></li>
+			<li><a href="/unfollowers">Unfollowers</a></li>
+		</ul>
+	</header>
 </body>
 
 </html>

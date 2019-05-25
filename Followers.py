@@ -5,6 +5,8 @@ class Followers:
     def __init__(self, username, password):
         self.username = username
         self.password = password
+    
+    def login(self):
         self.obj = instaloader.Instaloader()
         self.obj.login(self.username, self.password)
  
