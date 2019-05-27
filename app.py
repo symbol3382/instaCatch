@@ -35,8 +35,9 @@ def get_analysis(user_login_type):
             compare_list.add((row[1], row[2]))
         new = list(followers_list.difference(compare_list))
         unf = list(compare_list.difference(followers_list))
-
-    session['funame'] = list(followers_list)
+    followers_list = list(followers_list)
+    followers_list.sort()
+    session['funame'] = followers_list
     session['f_new'] = new
     session['f_un'] = unf
 

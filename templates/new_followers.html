@@ -8,25 +8,25 @@
 </head>
 
 <body>
-		<header>
-				<div class="home-logo-div">
-					<img src="../static/img/instagram-logo-home-white.png" height=50 />
-				</div>
-				<div class="header-button-div">
-					<div class="profile-name-heading">
-						<img src="{{ session['pic_url'] }}" width=50 height=50 />
-						<p> {{ session['username'] }} </p>
-					</div>
-					<div class="profile-name-list">
-						<a href="followers"><span class="space-span"></span>Current Followers</a>
-						{% if not session['new_user'] %}
-						<a href="new-followers"><span class="space-span"></span>New Followers</a>
-						<a href="unfollowers"><span class="space-span"></span>Unfollowers</a>
-						{% endif %}
-						<a href="logout"><span class="space-span"></span>Log out</a>
-					</div>
-				</div>
-			</header>
+	<header>
+		<div class="home-logo-div">
+			<a href="home"><img src="../static/img/instagram-logo-home-white.png" height=50 /></a>
+		</div>
+		<div class="header-button-div">
+			<div class="profile-name-heading">
+				<img src="{{ session['pic_url'] }}" width=50 height=50 />
+				<p> {{ session['username'] }} </p>
+			</div>
+			<div class="profile-name-list">
+				<a href="followers"><span class="space-span"></span>Current Followers</a>
+				{% if not session['new_user'] %}
+				<a href="new-followers"><span class="space-span"></span>New Followers</a>
+				<a href="unfollowers"><span class="space-span"></span>Unfollowers</a>
+				{% endif %}
+				<a href="logout"><span class="space-span"></span>Log out</a>
+			</div>
+		</div>
+	</header>
 	<div class="main-content">
 		<p>Followers list</p>
 		<div class="followers-list">
