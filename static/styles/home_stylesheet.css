@@ -1,36 +1,78 @@
-header{
-    height: 50px;
-    width: 100%;
-    min-width: 600px;
+.title-div {
+	height: 200px;
+	margin-top: 50px;
+	min-width: 700px;
 }
 
-.home-logo-div {
-    width: 120px;
-    height: 40px;
-    margin-left: 10px;
-    background-image: url('../img/instagram-logo-home-white.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    float: left;
+.profile-picture-div {
+	float: left;
+	margin-left: 100px;
+	padding-bottom: 20px;
+	border-bottom: 2px solid #fff;
 }
 
-header ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    transition: .3s;
-    background: #181818;
+.profile-picture-div img {
+	border-radius: 100px;
 }
 
-header ul li a:hover {
-    transition: .3s;
+.profile-name-div {
+	float: left;
+	padding-left: 20px;
+	padding-bottom: 20px;
+	border-bottom: 3px solid #fff;
 }
 
-header ul li {
-    list-style: none;
-    display: inline-block;
+.profile-name-div p {
+	line-height: 200px;
+	vertical-align: middle;
+	margin: 0px;
+	font-size: 40px;
 }
-header ul {
-    float: right;
-    margin: 0px;
+
+.analysis-div {
+	margin-top: 50px;
+	margin-left: 300px;
+	font-size: 30px;
+}
+
+.analysis-div-section {
+	border-bottom: 2px solid #FFF;
+	width: 600px;
+}
+
+.analysis-div-section a {
+	text-decoration: none;
+}
+
+
+.analysis-title p {
+	margin: 0px;
+	margin-top: 20px;
+	margin-left: 20px;
+	
+}
+
+.analysis-data p {
+	font-size: 40px;
+	margin: 0px;
+	margin-left: 200px;
+	margin-bottom: 20px;
+}
+
+.analysis-div-section p{
+	transition: .5s;
+}
+
+.analysis-div-section-False:hover {
+	background: #fff;
+}
+
+.analysis-div-section-False:hover p {
+	color: #000;
+	transition: 0.7s;
+}
+
+.small-font{
+	font-size: 20px;
+	color: #
 }

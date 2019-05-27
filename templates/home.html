@@ -4,17 +4,92 @@
 	<title>Welcome</title>
 	<link rel="stylesheet" href="{{ url_for('static', filename='styles/home_stylesheet.css') }}" type="text/css">
 	<link rel="stylesheet" href="{{ url_for('static', filename='styles/stylesheet.css') }}" type="text/css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='styles/header-stylesheet.css') }}" type="text/css">
 </head>
 
 <body>
 	<header>
-		<div class="home-logo-div"></div>
-		<ul>
-			<li><a href="/followers">Followers</a></li>
-			<li><a href="/new_followers">New Followers</a></li>
-			<li><a href="/unfollowers">Unfollowers</a></li>
-		</ul>
+		<div class="home-logo-div">
+			<img src="../static/img/instagram-logo-home-white.png" height=50 />
+		</div>
+		<div class="header-button-div">
+			<div class="profile-name-heading">
+				<img src="{{ session['pic_url'] }}" width=50 height=50 />
+				<p> {{ session['username'] }} </p>
+			</div>
+			<div class="profile-name-list">
+				<a href="followers"><span class="space-span"></span>Current Followers</a>
+				{% if not session['new_user'] %}
+				<a href="new-followers"><span class="space-span"></span>New Followers</a>
+				<a href="unfollowers"><span class="space-span"></span>Unfollowers</a>
+				{% endif %}
+				<a href="logout"><span class="space-span"></span>Log out</a>
+			</div>
+		</div>
 	</header>
+	<div class="main-content">
+		<div class="title-div">
+			<div class="profile-picture-div">
+				<img src="{{ session['pic_url'] }}" width=200 height=200>
+			</div>
+			<div class="profile-name-div">
+				<p>{{ session['full_name'] }}</p>
+			</div>
+		</div>
+		<div class="analysis-div">
+			<div class="analysis-div-section analysis-div-section-False">
+				<a href="followers">
+					<div class="analysis-title">
+						<p>Followers</p>
+					</div>
+					<div class="analysis-data">
+						<p>112</p>
+					</div>
+				</a>
+			</div>
+			<div class="analysis-div-section analysis-div-section-{{ session['new_user'] }}">
+				{% if not session['new_user'] %}
+				<a href="new-followers">
+					{% endif %}
+					<div class="analysis-title">
+						<p>New Followers</p>
+					</div>
+					<div class="analysis-data">
+						<p>
+							{% if session['new_user'] %}
+							<span class="small-font">You will see changes after next time</span>
+							{% else %}
+							{{ new_followers }}
+							{% endif %}
+						</p>
+
+					</div>
+					{% if not session['new_user'] %}
+				</a>
+				{% endif %}
+			</div>
+			<div class="analysis-div-section analysis-div-section-{{ session['new_user'] }}">
+				{% if not session['new_user'] %}
+				<a href="unfollowers">
+					{% endif %}
+					<div class="analysis-title">
+						<p>Unfollowers</p>
+					</div>
+					<div class="analysis-data">
+						<p>
+							{% if session['new_user'] %}
+							<span class="small-font">You will see changes after next time</span>
+							{% else %}
+							{{ unfollowers }}
+							{% endif %}
+						</p>
+					</div>
+					{% if not session['new_user'] %}
+				</a>
+				{% endif %}
+			</div>
+		</div>
+	</div>
 </body>
 
 </html>

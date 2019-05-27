@@ -1,0 +1,41 @@
+.main-content p{
+	font-size: 40px;
+	margin: 0px;
+}
+
+.followers-list table{
+	border-collapse: collapse;
+	width: 50%;
+	min-width: 650px;
+	background: #1a1a1a;
+}
+
+.followers-list thead{
+	background: #FFF;
+	font-size: 20px;
+}
+
+.followers-list th{
+	height: 40px;
+	color: #1A1a1a;
+}
+
+.followers-list th, td{
+	width: 50%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.username-column{
+	text-align: right;
+	padding-right: 20px;
+}
+
+.name-column {
+	text-align: left;
+	padding-left: 20px;
+}
+
+.even{
+	background: #2B2B2B;
+}

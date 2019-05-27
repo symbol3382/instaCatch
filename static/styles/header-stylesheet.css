@@ -1,0 +1,83 @@
+header {
+	height: 50px;
+	width: 100%;
+	min-width: 600px;
+}
+
+.home-logo-div {
+	width: 100%;
+	position: absolute;
+}
+
+.home-logo-div img {
+	margin: auto;
+	display: block;
+}
+
+.header-button-div {
+	position: absolute;
+	right: 0;
+	margin-right: 20px;
+}
+
+.profile-name-heading {
+	padding-right: 10px;
+	height: 55px;
+}
+
+.profile-name-heading img {
+	display: block;
+	float: left;
+	margin-right: 20px;
+	border-radius: 25px;
+	z-index: 10;
+}
+
+.profile-name-heading p {
+	color: white;
+	line-height: 50px;
+	font-size: 15px;
+	margin: 0px;
+	float: left;
+	border-radius: 4px;
+}
+
+.header-button-div:hover .profile-name-list {
+	transition: 5s;
+	opacity: 1;
+	display: inline-block;
+	border-radius: 4px;
+}
+
+.header-button-div:hover .profile-name-heading {
+	border-bottom: 1px solid #FFF;
+}
+
+.profile-name-list {
+	display: none;
+	opacity: 0;
+	transition: 5s;
+	width: 100%;
+}
+
+.space-span {
+	width: 15px;
+	height: 40px;
+	display: block;
+	float: left;
+}
+
+.profile-name-list a {
+	display: block;
+	text-align: left;
+	text-decoration: none;
+	color: #FFF;
+	line-height: 40px;
+	transition: .5s;
+}
+
+.profile-name-list a:hover {
+	background: #FFF;
+	color: #000;
+	transition: .5s;
+}

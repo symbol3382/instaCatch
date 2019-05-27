@@ -1,33 +1,35 @@
 <html>
 
 <head>
-    <title>Welcome</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/stylesheet.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/index_stylesheet.css') }}" type="text/css">
+	<title>Welcome</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='styles/stylesheet.css') }}" type="text/css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='styles/index_stylesheet.css') }}" type="text/css">
 </head>
 
 <body>
-    <header>
-    </header>
-    <div class="content-div">
-        <div class="form-div">
-            <div class="home-logo-div"></div>
-            <form action="login" method="POST">
-                <div class="row">
-                    <input type="text" placeholder="Username" name="username">
-                </div>
-                <div class="row">
-                    <input type="password" placeholder="Password" name="password">
-                </div>
-                <div class="row">
-                    <input type="submit" value="Login with Instagram">
-                </div>
-            </form>
-        </div>
-    </div>
-    <footer>
-        <p> Copyrights</p>
-    </footer>
+	<header>
+	</header>
+	<div class="content-div">
+		<div class="form-div">
+			<div class="home-logo-div"></div>
+			<form action="login" method="POST">
+				{% if show_message %}
+					<p style="color:white">
+						{{ error_message }}
+					</p>
+				{% endif %}
+				<div class="row">
+					<input type="text" placeholder="Username" name="username">
+				</div>
+				<div class="row">
+					<input type="password" placeholder="Password" name="password">
+				</div>
+				<div class="row">
+					<input type="submit" value="Login with Instagram">
+				</div>
+			</form>
+		</div>
+	</div>
 </body>
 
 </html>
